@@ -35,8 +35,26 @@ print("------------ Loops ---------------")
 
 for num in number: 
     print (num, end=" ")
+
+#You can also range 
+
+for x in range(6):
+    print (x)
     
-print("For loop Ended")
+# or set the range value 
+for y in range(2,6):
+    print (y)
+    
+# or we can set the increment stage 
+for z in range(1,6,2):
+    print (z)
+    
+# we can also add a else statement
+for a in range(10):
+    print (a)   
+else:
+    print("For loop Ended")
+
 
 # While Loops 
 count = 0
@@ -44,6 +62,32 @@ while count < 5:
     print(count)
     count += 1
     
+# let's try breaking it then. 
+
+i = 1
+while i <6: 
+    print (i)
+    if i == 3:
+        break
+    i += 1
+    
+i = 0
+while i < 6:
+  i += 1
+  if i == 3:
+    continue
+  print(i)
+  
+# we can also put an else too 
+
+i = 1
+while i < 6:
+  print(i)
+  i += 1
+else:
+  print("i is no longer less than 6")
+  
+  
 print("------------ Function ---------------")
 
 def greet(name): 
@@ -81,7 +125,7 @@ print("------------ Dictionary & Comprehension ---------------")
 squared_dict = {n: n**2 for n in number}
 print(squared_dict)
 print("Likewise, you can retrive length of dictionary >>> " + str(len(squared_dict)))
-print(f"you get retrieve the value via key vis squared_dict.get(2) >>> {squared_dict[2]}") 
+print(f"you get retrieve the value via key vis squared_dict[2]) >>> {squared_dict[2]}") 
 print(f"you get retrieve the value via key vis squared_dict.get(2) >>> {squared_dict.get(2)}") 
 
 #You can also change the items too 
