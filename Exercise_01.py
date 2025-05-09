@@ -1,11 +1,31 @@
 # Basic Syntax & Variables
 
 
+from typing import Counter
+
+
 print("------------ Syntax and Variable ---------------")
 #Variable and Data Types
 x = 10 
 y = 3.14
 name = "Python"
+#alternatively, you can join strings together
+name_2 = "".join(["Never ","Gonna ", "Give ", "You ", "Up"])
+print(name_2)
+#or you can just add it together the concat together
+name_3 = "Never" + " " + "Gonna" + " " + "Let" + " " + "You" + " " + "Down"
+print(name_3)
+
+name_4 = ""
+name_4 += "Never "
+name_4 += "Gonna "
+name_4 += "Turn "
+name_4 += "Around & "
+name_4 += "Dessert "
+name_4 += "You"
+print(name_4) 
+
+
 is_active = True
 number = [1,2,3,4,5]
 
@@ -121,6 +141,7 @@ squared.pop()
 print (f"Popping last element if pop only>>> {squared}")
 
 
+
 print("------------ Dictionary & Comprehension ---------------")
 squared_dict = {n: n**2 for n in number}
 print(squared_dict)
@@ -151,6 +172,11 @@ print(f"To get dictionary values >> {squared_dict.values()}")
 
 print(f"To retrieve the key:value pairs >> {squared_dict.items()} >>> Output as Tuples")
 
+# You may also quickly convert list to a dict via function called Counter
+number_dict = Counter(number)
+print(f"You may also quickly convert list to a dict via function called Counter >> {number_dict}")
+
+
 # Tuples
 print("------------ Tuples ---------------")
 
@@ -170,6 +196,21 @@ print(f"Unpacked Tuple: {a}, {b}, {c}, {d}, {e}")
 # Nested Tuple
 nested_tuple = (10, (20, 30), 40)
 print("Nested Tuple:", nested_tuple)
+
+# Interestingly if you encounter a matix, there are options for you to tranverse it.
+grid = [
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
+]
+
+rows = [tuple(row) for row in grid]
+cols = [tuple(col) for col in zip(*grid)]
+
+row_counter = Counter(rows)
+col_counter = Counter(cols)
+
+print(f"You may also tranverse grid => {grid} by using zip command")
 
 # Sets
 print("------------ Sets ---------------")
@@ -198,6 +239,9 @@ print("Intersection:", set_a & set_b)  # or set_a.intersection(set_b)
 print("Difference (A - B):", set_a - set_b)  # or set_a.difference(set_b)
 print("Symmetric Difference:", set_a ^ set_b)  # or set_a.symmetric_difference(set_b)
 
+# You can also change the list to a set 
+set_c = set(number)
+print (f"You can also change the list into a set by set(List) => {set_c}")
 
 
 print("------------ Exception Handling ---------------")
